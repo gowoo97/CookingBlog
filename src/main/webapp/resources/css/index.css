@@ -6,12 +6,13 @@
 #buttons{
 	float:right;
 	height: 100%;
+	padding-top: 10px;
 }
 
 #logo{
 	float:left;
 	height: 100%;
-	padding: auto;
+	padding-top: 10px;
 }
 
 #menuBar{
