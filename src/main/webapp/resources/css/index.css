@@ -1,0 +1,44 @@
+*{
+	paddig:0;
+	margin:0;
+}
+
+#buttons{
+	float:right;
+	height: 100%;
+}
+
+#logo{
+	float:left;
+	height: 100%;
+	padding: auto;
+}
+
+#menuBar{
+	background-color: black;
+	height: 50px;
+}
+
+#mainImg{
+	width: 70%;
+  height: 70%;
+ 	display: block;
+ 	margin-top:5%;
+ 	padding: auto;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	opacity: 0.5;
+}
+
+#banner{
+	position: relative;
+}
+
+#title{
+	position: absolute;
+	text-align: center;
+	top:50%;
+    left: 30%;
+    color: black;
+    font-weight: 100;
+}
