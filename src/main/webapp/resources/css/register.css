@@ -1,0 +1,48 @@
+*{
+	margin:0;
+	padding: 0;
+}
+
+body{
+	width: 100%;
+	height: 100%;
+}
+html{
+	width: 100%;
+	height: 100%;
+}
+
+#buttons{
+	float:right;
+	height: 100%;
+	padding-top: 10px;
+}
+
+#logo{
+	float:left;
+	height: 100%;
+	padding-top: 10px;
+}
+
+#menuBar{
+	background-color: black;
+	height: 50px;
+}
+
+#loginTemplate{
+	border:1px solid black;
+	height:100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#loginBtt{
+	width: 100%;
+	
+}
+
+input{
+	width:100%;
+}

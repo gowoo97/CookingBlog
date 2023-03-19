@@ -3,22 +3,6 @@
 	margin:0;
 }
 
-#buttons{
-	float:right;
-	height: 100%;
-	padding-top: 10px;
-}
-
-#logo{
-	float:left;
-	height: 100%;
-	padding-top: 10px;
-}
-
-#menuBar{
-	background-color: black;
-	height: 50px;
-}
 
 #mainImg{
 	width: 70%;

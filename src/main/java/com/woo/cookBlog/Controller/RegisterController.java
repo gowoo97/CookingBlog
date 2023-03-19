@@ -1,6 +1,5 @@
 package com.woo.cookBlog.Controller;
 
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -15,39 +14,32 @@ import com.woo.cookBlog.DTO.UserDTO;
 import com.woo.cookBlog.service.UserService;
 
 @Controller
-@RequestMapping("/login")
-public class LoginController {
+@RequestMapping("/register")
+public class RegisterController {
 	
 	@Autowired
 	UserService userService;
 	
 	@GetMapping
-	public String loginPage() {
-		return "login";
+	public String registerPage() {
+		return "register";
 	}
 	
 	@PostMapping
-	public String login(Model model,HttpServletRequest req,HttpServletResponse res) {
+	public String RegisterUser(Model model,HttpServletRequest req,HttpServletResponse res) {
 		String id=req.getParameter("id");
-		String pw=req.getParameter("password");
+		String password=req.getParameter("password");
+		String password_confirm=req.getParameter("password_confirm");
+		String nickname=req.getParameter("nickname");
 		
-		UserDTO user=userService.findUser(id);
+		UserDTO user=new UserDTO();
+		user.setId(id);
+		user.setPassword(password);
+		user.setNickName(nickname);
 		
-		if(pw.equals(user.getPassword())) {
-			Cookie cookie_id=new Cookie("id",user.getId());
-			Cookie cookie_nickname=new Cookie("nickname",user.getNickName());
-			
-			res.addCookie(cookie_nickname);
-			res.addCookie(cookie_id);
-			
-			
-			return "redirect:/";
-		}
-		else {
-			return "alert";
-		}
+		userService.insertUser(user);
 		
-		
+		return "alert";
 	}
 	
 }
