@@ -9,7 +9,7 @@
     <link href="${path}/resources/css/menuBar.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <jsp:include page="menuBar.jsp" flush="true" />
+    <jsp:include page="menuBar.jsp" />
     <div id="banner">
     	<img id="mainImg"  src="${ path }/resources/img/cook.jpg"/>
     	<h1 id="title">Share your recipe</h1>

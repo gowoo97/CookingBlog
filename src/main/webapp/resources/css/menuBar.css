@@ -1,7 +1,8 @@
-#buttons{
+.buttons{
 	float:right;
 	height: 100%;
 	padding-top: 10px;
+	margin-right: 10px;
 }
 
 #logo{
@@ -11,11 +12,40 @@
 }
 
 #menuBar{
-	background-color: black;
+	background-color: #4AB34A;
 	height: 50px;
 }
 
-#munuBar div{
-	cursor:pointer;
-	background-color:white;
+#menuBar li{
+	list-style: none;
+}
+
+#menuBar a{
+	text-decoration: none;
+	color:white;
+}
+
+#menuBar ul li{
+	float:left;
+	width:25%;
+	height:50px;
+	line-height: 50px;
+	text-align: center;
+}
+#menuBar ul li a{
+	display:block;
+}
+
+#menuBar ul li a:hover{
+	background: #006400;
+}
+
+#header div{
+	display:inline-block;
+	height:100%;
+}
+
+#header{
+	height:50px;
+	background-color: white;
 }
