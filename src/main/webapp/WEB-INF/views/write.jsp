@@ -37,7 +37,8 @@
     </script>
     
     <form method="post">
- 		 <textarea id="summernote" name="editordata"></textarea>
+    	<input name="title" type="text"/>
+ 		 <textarea id="summernote" name="content"></textarea>
  		 <input type="submit" value="등록"/>
 	</form>
     
