@@ -36,7 +36,7 @@
     });
     </script>
     
-    <form method="post">
+    <form method="post" action="/cookBlog/board/write">
     	<input name="title" type="text"/>
  		 <textarea id="summernote" name="content"></textarea>
  		 <input type="submit" value="등록"/>

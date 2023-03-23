@@ -1,5 +1,7 @@
 package com.woo.cookBlog.repository;
 
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,24 @@ public class BoardDAO {
 	public void insertBoard(BoardDTO boardDTO) {
 		String sql="insert into board(id,content,title) values(?,?,?)";
 		jdbcTemplate.update(sql,boardDTO.getId(),boardDTO.getContent(),boardDTO.getTitle());
+	}
+	
+	public List<BoardDTO> selectBoard(){
+		String sql="select * from board";
+	List<BoardDTO> boards=jdbcTemplate.query(
+					sql,
+					(rs,rowNum) ->{
+						BoardDTO boardDTO=new BoardDTO();
+						boardDTO.setSeq(rs.getInt("seq"));
+						boardDTO.setId(rs.getString("id"));
+						boardDTO.setTitle(rs.getString("title"));
+						boardDTO.setContent(rs.getString("content"));
+						boardDTO.setCreate_date(rs.getTimestamp("create_date"));
+						return boardDTO;
+					}
+				);
+	
+		return boards;
 	}
 	
 	

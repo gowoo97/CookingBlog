@@ -8,25 +8,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.woo.cookBlog.DTO.BoardDTO;
 import com.woo.cookBlog.service.BoardService;
 
 @Controller
-@RequestMapping("/write")
-public class WriteController {
+@RequestMapping("/board")
+public class BoardController {
 	
 	@Autowired
 	private BoardService boardService;
 	
-	@GetMapping
-	public String Page() {
+	@GetMapping("/writePage")
+	public String page() {
 		return "write";
 	}
 	
-	@PostMapping
+	@GetMapping("/boardList")
+	public String boardList(Model model) {
+
+		model.addAttribute("boards", boardService.getBoards());
+		
+		return "boardList";
+	}
+	
+	@RequestMapping(value="/write" , method=RequestMethod.POST)
 	public String write(Model model,HttpServletResponse res,HttpServletRequest req) {
 		
 		String content=req.getParameter("content");
@@ -49,9 +57,12 @@ public class WriteController {
 		
 		boardService.insertBoard(boardDTO);
 		
-		return "write";
-		
-		
+		return "redirect:/board/boardList";
 	}
+	
+	
+	
+	
+	
 	
 }

@@ -22,7 +22,7 @@
         <div class="buttons" style="height:100%; float:right;color: black" onclick="location.href='/cookBlog/logout'">
         		로그아웃
         </div>
-        <div class="buttons" style="height:100%; float:right; color: black" onclick="location.href='/cookBlog/write'">
+        <div class="buttons" style="height:100%; float:right; color: black" onclick="location.href='/cookBlog/board/writePage'">
         	레시피 등록
         </div>
         
@@ -33,9 +33,9 @@
 
 <div id="menuBar">
 	<ul>
-		<li><a href="#">홈</a></li>
-		<li><a href="#">게시판</a></li>
-		<li><a href="#">내 정보</a></li>
+		<li><a href="/cookBlog">홈</a></li>
+		<li><a href="/cookBlog/board/boardList">게시판</a></li>
+		<li><a href="/">내 정보</a></li>
 	</ul>
 
 
