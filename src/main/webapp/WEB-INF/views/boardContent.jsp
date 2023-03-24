@@ -11,20 +11,7 @@
 <body>
     <jsp:include page="menuBar.jsp" />
    	
-   	<table>
-   		<th>게시물 번호</th>
-   		<th>작성자</th>
-   		<th>제목</th>
-   		<th>작성 일시</th>
-		<c:forEach var="item" items="${ boards }">
-			<tr>
-				<td>${item.seq }</td>
-				<td>${ item.id } </td>
-				<td><a href="/cookBlog/board/boardList/detail?no=${ item.seq }"> ${ item.title }  </a></td>
-				<td>${item.create_date }</td>	
-			</tr>
-		</c:forEach>   	
-   	</table>
+   	${ board.content }
    	
     
 </body>

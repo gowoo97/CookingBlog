@@ -23,4 +23,9 @@ public class BoardService {
 	public List<BoardDTO> getBoards(){
 		return boardDAO.selectBoard();
 	}
+	
+	public BoardDTO getBoardBySeq(int no) {
+		return boardDAO.selectBoardBySeq(no);
+	}
+
 }

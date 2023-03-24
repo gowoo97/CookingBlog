@@ -34,6 +34,15 @@ public class BoardController {
 		return "boardList";
 	}
 	
+	
+	@GetMapping("/boardList/detail")
+	public String detail(Model model, int no) {
+		BoardDTO board=boardService.getBoardBySeq(no);
+		model.addAttribute("board", board);
+		return "boardContent";
+	}
+	
+	
 	@RequestMapping(value="/write" , method=RequestMethod.POST)
 	public String write(Model model,HttpServletResponse res,HttpServletRequest req) {
 		
