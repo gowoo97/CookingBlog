@@ -7,11 +7,26 @@
     <title>메인페이지</title>
     <link href="${path}/resources/css/index.css" rel="stylesheet" type="text/css">
     <link href="${path}/resources/css/menuBar.css" rel="stylesheet" type="text/css">
+    <link href="${path}/resources/css/boardContent.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <jsp:include page="menuBar.jsp" />
    	
-   	${ board.content }
+   	<div class="boardContent">
+   		<div class="content">
+   			${ board.content }
+   		</div>
+   		
+   	<div class="comment">
+   		<div class="container">
+   			<input type="text"/>
+   			<input type="submit"/>
+   		</div>
+   	</div>
+   	</div>
+   	
+   	
+   	
    	
     
 </body>
