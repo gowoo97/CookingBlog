@@ -1,5 +1,7 @@
 package com.woo.cookBlog.Controller;
 
+import java.util.List;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.woo.cookBlog.DTO.BoardDTO;
+import com.woo.cookBlog.DTO.CommentDTO;
 import com.woo.cookBlog.service.BoardService;
+import com.woo.cookBlog.service.CommentService;
 
 @Controller
 @RequestMapping("/board")
@@ -20,6 +24,9 @@ public class BoardController {
 	
 	@Autowired
 	private BoardService boardService;
+	
+	@Autowired
+	private CommentService commentService;
 	
 	@GetMapping("/writePage")
 	public String page() {
@@ -38,7 +45,10 @@ public class BoardController {
 	@GetMapping("/boardList/detail")
 	public String detail(Model model, int no) {
 		BoardDTO board=boardService.getBoardBySeq(no);
+		List<CommentDTO> comments=commentService.getComments(no);
+		System.out.println(comments.get(0).getId());
 		model.addAttribute("board", board);
+		model.addAttribute("comment",comments);
 		return "boardContent";
 	}
 	

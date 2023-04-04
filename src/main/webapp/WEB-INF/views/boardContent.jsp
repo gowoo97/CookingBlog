@@ -16,12 +16,32 @@
    		<div class="content">
    			${ board.content }
    		</div>
+   	<%
+   		String no=request.getParameter("no");
+   	%>
    		
    	<div class="comment">
    		<div class="container">
-   			<input type="text"/>
+   		<form action="/cookBlog/comment" method="POST">
+   			<input type="text" name="comment"/>
+   			<input type="hidden" name="no" value="<%=no%>" />
    			<input type="submit"/>
+   			
+   		</form>
    		</div>
+   		
+   		<c:forEach var="item" items="${ comment }">
+   			<div style="border:1px solid black">
+   				<h6>${ item.id }</h6>
+   				<p>
+   					${ item.comment }
+   				</p>
+   				
+   				<span> ${item.create_date } </span>
+   			</div>
+   		</c:forEach>
+   		
+   		
    	</div>
    	</div>
    	
