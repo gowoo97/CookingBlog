@@ -20,7 +20,15 @@ public class CommentService {
 	}
 	
 	public List<CommentDTO> getComments(int no){
-		return commentDAO.selectComment(no);
+		
+		List<CommentDTO> comments=commentDAO.selectComment(no);
+		
+		if(comments.size()==0) {
+			return null;
+		}else
+			return comments;
+		
+		
 	}
 	
 }

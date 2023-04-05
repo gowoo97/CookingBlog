@@ -46,9 +46,13 @@ public class BoardController {
 	public String detail(Model model, int no) {
 		BoardDTO board=boardService.getBoardBySeq(no);
 		List<CommentDTO> comments=commentService.getComments(no);
-		System.out.println(comments.get(0).getId());
+		
 		model.addAttribute("board", board);
-		model.addAttribute("comment",comments);
+		
+		if(comments!=null) {
+			model.addAttribute("comment",comments);
+		}
+		
 		return "boardContent";
 	}
 	

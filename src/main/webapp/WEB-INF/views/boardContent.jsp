@@ -13,6 +13,12 @@
     <jsp:include page="menuBar.jsp" />
    	
    	<div class="boardContent">
+   		<div class="title">
+   			<h2> ${ board.title }  </h2>
+   			<div>
+   				${ board.id } ${ board.create_date }
+   			</div>
+   		</div>
    		<div class="content">
    			${ board.content }
    		</div>
@@ -21,14 +27,15 @@
    	%>
    		
    	<div class="comment">
-   		<div class="container">
+   		
    		<form action="/cookBlog/comment" method="POST">
+   		<div class="container">
    			<input type="text" name="comment"/>
    			<input type="hidden" name="no" value="<%=no%>" />
    			<input type="submit"/>
-   			
-   		</form>
    		</div>
+   		</form>
+   	
    		
    		<c:forEach var="item" items="${ comment }">
    			<div style="border:1px solid black">
