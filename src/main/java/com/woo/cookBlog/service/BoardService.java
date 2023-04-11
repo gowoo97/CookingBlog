@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.woo.cookBlog.DTO.BoardDTO;
-import com.woo.cookBlog.repository.BoardDAO;
+import com.woo.cookBlog.mapper.BoardMapper;
 
 @Service
 public class BoardService {
 	
 	@Autowired
-	private BoardDAO boardDAO;
+	private BoardMapper boardDAO;
 	
 	
 	public void insertBoard(BoardDTO boardDTO) {

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.woo.cookBlog.DTO.BoardDTO;
 
 @Repository
-public class BoardDAO {
+public class BoardDAO implements BoardRepository{
 	
 	JdbcTemplate jdbcTemplate;
 	

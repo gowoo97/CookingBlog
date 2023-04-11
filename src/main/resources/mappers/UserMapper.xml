@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.woo.cookBlog.mapper.UserMapper">
+
+	<insert id="insertUser" parameterType="com.woo.cookBlog.DTO.UserDTO">
+		insert into user(id,password,nickname) 
+		values(#{id},#{password},#{nickname});
+	</insert>
+	
+	<select id="findUserById" parameterType="string" resultType="com.woo.cookBlog.DTO.UserDTO">
+		select * from user where id=#{id} 
+	</select>
+	
+</mapper>
