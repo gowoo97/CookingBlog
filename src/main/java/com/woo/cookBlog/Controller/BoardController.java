@@ -12,11 +12,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.woo.cookBlog.DTO.BoardDTO;
 import com.woo.cookBlog.DTO.CommentDTO;
+import com.woo.cookBlog.DTO.PagingDTO;
 import com.woo.cookBlog.service.BoardService;
 import com.woo.cookBlog.service.CommentService;
+import com.woo.cookBlog.service.PagingService;
 
 @Controller
 @RequestMapping("/board")
@@ -28,15 +31,24 @@ public class BoardController {
 	@Autowired
 	private CommentService commentService;
 	
+	@Autowired
+	private PagingService pagingService;
+	
 	@GetMapping("/writePage")
 	public String page() {
 		return "write";
 	}
 	
 	@GetMapping("/boardList")
-	public String boardList(Model model) {
+	public String boardList(Model model,@RequestParam(value="no",required=false,defaultValue="1") int no) {
+		
+		
+		
+		PagingDTO paging=pagingService.getPagingDTO(no,5);
+		
 
-		model.addAttribute("boards", boardService.getBoards());
+		model.addAttribute("paging", paging);
+		model.addAttribute("boards", boardService.getBoards(no));
 		
 		return "boardList";
 	}

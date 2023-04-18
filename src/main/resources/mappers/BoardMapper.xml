@@ -12,8 +12,8 @@
 		INSERT INTO board(id,content,title) values(#{id},#{content},#{title})
 	</insert>
 	
-	<select id="selectBoard" resultType="hashmap">
-		select * from board
+	<select id="selectBoard" resultType="hashmap" parameterType="Integer">
+		select * from board LIMIT #{ start }, #{ cnt }
 	</select>
 	
 </mapper>

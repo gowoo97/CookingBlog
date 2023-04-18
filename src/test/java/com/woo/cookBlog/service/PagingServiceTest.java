@@ -5,28 +5,24 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 
-import com.woo.cookBlog.DTO.BoardDTO;
-import com.woo.cookBlog.mapper.BoardMapper;
+import com.woo.cookBlog.mapper.PagingMapper;
+
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {
 		"file:src/main/webapp/WEB-INF/spring/root-context.xml",
 		"file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml"
 })
-public class BoardServiceTest {
-
+public class PagingServiceTest {
+	
 	@Autowired
- BoardMapper boardMapper;
+	private PagingMapper mapper;
 	
 	@Test
-	public void selectNumById() {
-		System.out.println((boardMapper.selectBoardBySeq(1)).getContent());
-	}
-	
-	@Test
-	public void insertBoard() {
-		
+	public void getNumOfBoard() {
+		System.out.println(mapper.getNumOfBoard());
 	}
 	
 }

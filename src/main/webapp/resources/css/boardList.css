@@ -1,0 +1,12 @@
+#boardList{
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: center;	
+	
+}
+
+#boardList>table{
+	width: 80%;
+	min-height: 100px;
+}

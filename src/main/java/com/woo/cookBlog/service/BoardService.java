@@ -20,8 +20,9 @@ public class BoardService {
 	}
 	
 	
-	public List<BoardDTO> getBoards(){
-		return boardDAO.selectBoard();
+	public List<BoardDTO> getBoards(int no){
+		
+		return boardDAO.selectBoard((no-1)*10,10);
 	}
 	
 	public BoardDTO getBoardBySeq(int no) {

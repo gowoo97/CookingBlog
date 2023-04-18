@@ -35,7 +35,7 @@
 	<ul>
 		<li><a href="/cookBlog">홈</a></li>
 		<li><a href="/cookBlog/board/boardList">게시판</a></li>
-		<li><a href="/">내 정보</a></li>
+		<li><a href="/cookBlog/mypage">내 정보</a></li>
 	</ul>
 
 
